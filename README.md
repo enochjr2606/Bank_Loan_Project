@@ -19,15 +19,18 @@ ________________________________________
 - KPIs: Total Loan Applications, Funded Amount, Received Amount, Interest Rate, and DTI.
 -	Good Loan vs Bad Loan Issuance (Pie Charts).
 -	Loan Status Table: Fully Paid, Charged Off, Current
+![Project summary](./Images/Overview.png)
 
 ### 🔎 Overview
 - Funded Amount by Month (Line Chart).
 -	Regional Loan Distribution (Filled Map).
 -	Loan Term Breakdown (Donut Chart).
 -	Funded Amount by Employee Length, Loan Purpose, and Home Ownership (Bar and Tree Maps).
+![Project Overview](./Images/Overview.png)
 
 ### 📈 Detailed
 Detailed insights are derived by examining each record with filters and slicers. These allow users to interact with specific borrower profiles and compare them against macro trends.
+![Project details](./Images/Overview.png)
 
 ________________________________________
 ## 💡 Key Insights
@@ -90,12 +93,12 @@ ________________________________________
    
 ________________________________________
 ## 📄 Access Full Documentation
-👉 [Attach SQL Script or Google Drive/Repo link here]
+👉  Dataset [link](./Dataset/financial_loan.csv)
 
 ________________________________________
 ## 🙌 Acknowledgments
 Special thanks to:
-•	Open Source SQL and Power BI Communities
-•	Microsoft Power Platform
-•	Data analysts and financial experts who inspired the metrics
+-	Open Source SQL and Power BI Communities
+-	Microsoft Power Platform
+-	Data analysts and financial experts who inspired the metrics
 
