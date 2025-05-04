@@ -93,7 +93,7 @@ ________________________________________
    
 ________________________________________
 ## 📄 Access Full Documentation
-👉  Dataset [link](./Dataset/financial_loan.CSV)
+👉  Dataset [link](./Dataset/financial_loan.csv)
 
 ________________________________________
 ## 🙌 Acknowledgments
