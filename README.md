@@ -19,18 +19,18 @@ ________________________________________
 - KPIs: Total Loan Applications, Funded Amount, Received Amount, Interest Rate, and DTI.
 -	Good Loan vs Bad Loan Issuance (Pie Charts).
 -	Loan Status Table: Fully Paid, Charged Off, Current
-![Project summary](./Images/Summary_Dashboard.png)
+- ![Project summary](./Images/Summary_Dashboard.png)
 
 ### 🔎 Overview
 - Funded Amount by Month (Line Chart).
 -	Regional Loan Distribution (Filled Map).
 -	Loan Term Breakdown (Donut Chart).
 -	Funded Amount by Employee Length, Loan Purpose, and Home Ownership (Bar and Tree Maps).
-![Project Overview](./Images/Over_View.png)
+- ![Project Overview](./Images/Over_View.png)
 
 ### 📈 Detailed
 Detailed insights are derived by examining each record with filters and slicers. These allow users to interact with specific borrower profiles and compare them against macro trends.
-![Project details](./Images/Detailed.png)
+- ![Project details](./Images/Detailed.png)
 
 ________________________________________
 ## 💡 Key Insights
