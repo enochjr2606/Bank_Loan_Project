@@ -1,7 +1,7 @@
 
 # 🏦 Bank Loan Analysis Project
 
-________________________________________
+
 ## 📚 Project Overview
 This project involves developing a comprehensive Bank Loan Analysis Dashboard using Power BI connected to an MS SQL Server database. The aim is to explore, analyse, and visualize loan-related data to drive strategic financial decisions and provide insights into loan issuance, repayment, and borrower behaviour.
 
@@ -15,7 +15,6 @@ Financial institutions require a dynamic and insightful view of their loan portf
 
 ________________________________________
 ## 📊 Key Visuals in the Power BI Dashboard
-________________________________________
 ### 💼 Summary
 - KPIs: Total Loan Applications, Funded Amount, Received Amount, Interest Rate, and DTI.
 -	Good Loan vs Bad Loan Issuance (Pie Charts).
@@ -27,12 +26,11 @@ ________________________________________
 -	Loan Term Breakdown (Donut Chart).
 -	Funded Amount by Employee Length, Loan Purpose, and Home Ownership (Bar and Tree Maps).
 
-## 📈 Detailed
+### 📈 Detailed
 Detailed insights are derived by examining each record with filters and slicers. These allow users to interact with specific borrower profiles and compare them against macro trends.
 
 ________________________________________
 ## 💡 Key Insights
-________________________________________
 -	86.2% of issued loans are classified as Good, while 13.8% are Bad.
 -	Loans for Debt Consolidation represent the highest funded purpose (~$0.23B).
 -	Most loans are for 60 months (62.66%).
@@ -41,7 +39,6 @@ ________________________________________
 
 ________________________________________
 ## 🛠️ Tools and Technologies
-________________________________________
 -	MS SQL Server
 -	SQL Server Management Studio
 -	Power BI 
@@ -49,7 +46,6 @@ ________________________________________
   
 ________________________________________
 ## 🗄️ Database Structure
-________________________________________
 The dataset includes fields such as:
 - `id`
 - `address_state`
@@ -78,7 +74,6 @@ The dataset includes fields such as:
 
 ________________________________________
 ## ⚙️ Key Features
-________________________________________
 -	Dynamic filtering by State, Grade, Purpose
 -	MoM and MTD tracking of all key metrics
 -	Good vs Bad Loan segmentation
@@ -87,7 +82,6 @@ ________________________________________
 
 ________________________________________
 ## 🚀 How to Run the Project
-________________________________________
 1.	Import SQL data into MS SQL Server.
 2.	Open Power BI and connect to the database.
 3.	Use Power Query to clean and transform the data.
@@ -95,34 +89,11 @@ ________________________________________
 5.	Load visuals and configure filters and KPIs.
    
 ________________________________________
-📄 Access Full Documentation
+## 📄 Access Full Documentation
 👉 [Attach SQL Script or Google Drive/Repo link here]
-________________________________________
-📜 License
-________________________________________
-This project is released under the MIT License.
-________________________________________
-🙌 Acknowledgments
-________________________________________
-Special thanks to:
-•	Open Source SQL and Power BI Communities
-•	Microsoft Power Platform
-•	Data analysts and financial experts who inspired the metrics
-
-
-
-
 
 ________________________________________
-📄 Access Full Documentation
-👉 [Attach SQL Script or Google Drive/Repo link here]
-________________________________________
-📜 License
-________________________________________
-This project is released under the MIT License.
-________________________________________
-🙌 Acknowledgments
-________________________________________
+## 🙌 Acknowledgments
 Special thanks to:
 •	Open Source SQL and Power BI Communities
 •	Microsoft Power Platform
