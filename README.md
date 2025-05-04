@@ -3,12 +3,10 @@
 
 ________________________________________
 ## 📚 Project Overview
-________________________________________
 This project involves developing a comprehensive Bank Loan Analysis Dashboard using Power BI connected to an MS SQL Server database. The aim is to explore, analyse, and visualize loan-related data to drive strategic financial decisions and provide insights into loan issuance, repayment, and borrower behaviour.
 
 ________________________________________
 ## ❗ Problem Statement
-________________________________________
 Financial institutions require a dynamic and insightful view of their loan portfolio to track performance, minimize risks, and improve decision-making. The objectives include:
 -	Tracking loan applications, funded amounts, and repayments.
 -	Measuring Average Interest Rates and Debt-to-Income (DTI) ratios.
