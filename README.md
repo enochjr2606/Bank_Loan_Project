@@ -1,119 +1,132 @@
 
-# 📊 Bank Loan Analysis Project
+# 🏦 Bank Loan Analysis Project
 
----
-
+________________________________________
 ## 📚 Project Overview
-This project analyzes and visualizes bank loan data using Power BI. The goal is to provide financial institutions with actionable insights into loan distributions, borrower behavior, and funding trends to aid in credit risk assessment and decision-making.
+________________________________________
+This project involves developing a comprehensive Bank Loan Analysis Dashboard using Power BI connected to an MS SQL Server database. The aim is to explore, analyse, and visualize loan-related data to drive strategic financial decisions and provide insights into loan issuance, repayment, and borrower behaviour.
 
----
-
+________________________________________
 ## ❗ Problem Statement
-Banks face the challenge of understanding which customer segments are more likely to default or require extended repayment terms. This project aims to uncover trends in loan applications, funding, interest rates, and repayments by segmenting the data based on various borrower attributes.
+________________________________________
+Financial institutions require a dynamic and insightful view of their loan portfolio to track performance, minimize risks, and improve decision-making. The objectives include:
+-	Tracking loan applications, funded amounts, and repayments.
+-	Measuring Average Interest Rates and Debt-to-Income (DTI) ratios.
+-	Classifying loans as Good vs. Bad and monitoring loan status.
+-	Understanding regional, demographic, and purpose-based lending trends.
 
----
-
+________________________________________
 ## 📊 Key Visuals in the Power BI Dashboard
+________________________________________
+### 💼 Summary
+- KPIs: Total Loan Applications, Funded Amount, Received Amount, Interest Rate, and DTI.
+-	Good Loan vs Bad Loan Issuance (Pie Charts).
+-	Loan Status Table: Fully Paid, Charged Off, Current
 
-### ✅ Overview Page
-- Total Loan Applications: **38.6K**
-- Total Funded Amount: **$435.8M**
-- Total Amount Received: **$473.1M**
-- Average Interest Rate: **12.05%**
-- Average DTI: **13.33%**
-
-**Visuals:**
-- Line chart: Funded Amount by Month
-- Map: Funded Amount by State
-- Donut chart: Funded Amount by Term (36/60 months)
-- Bar charts: By Purpose, Employee Length, Home Ownership
-
-### ✅ Detailed Page
-- Interactive table with filters for:
-  - Loan Purpose
-  - Home Ownership
-  - Grade/Sub-grade
-  - Issue Date
-  - Funded Amount
-  - Installment
-  - Amount Received
-
----
-
-## 💼 Summary
-The Power BI dashboard gives a high-level and granular view of bank loans, allowing decision-makers to filter and explore loan metrics by borrower demographics, geographic location, and loan characteristics.
-
----
-
-## 🔎 Overview
-Loan distribution and funding patterns across the U.S. are visualized with emphasis on loan term popularity, borrower employment length, and purpose. High concentrations of loans are observed in categories such as debt consolidation and credit card refinancing.
-
----
+### 🔎 Overview
+- Funded Amount by Month (Line Chart).
+-	Regional Loan Distribution (Filled Map).
+-	Loan Term Breakdown (Donut Chart).
+-	Funded Amount by Employee Length, Loan Purpose, and Home Ownership (Bar and Tree Maps).
 
 ## 📈 Detailed
 Detailed insights are derived by examining each record with filters and slicers. These allow users to interact with specific borrower profiles and compare them against macro trends.
 
----
-
+________________________________________
 ## 💡 Key Insights
-- **Debt Consolidation** leads in funding volume (~$230M)
-- **MORTGAGE** ownership category received **$219.33M**
-- **60-month terms** cover **62.66%** of loans
-- Employees with **10+ years** experience received **$116M**
-- **California** and **New York** were top states for loan issuance
+________________________________________
+-	86.2% of issued loans are classified as Good, while 13.8% are Bad.
+-	Loans for Debt Consolidation represent the highest funded purpose (~$0.23B).
+-	Most loans are for 60 months (62.66%).
+-	Highest funded employment length: 10+ years ($116M).
+-	Homeowners with Mortgages received more funding (~$219M) compared to renters.
 
----
-
+________________________________________
 ## 🛠️ Tools and Technologies
-- **Power BI** – Dashboard creation and data modeling  
-- **Excel** – Initial data cleaning and preparation  
-- **DAX** – Measures and KPIs  
-- **Power Query M** – Data transformations  
-- **PowerPoint** – Presentation formatting  
-
----
-
+________________________________________
+-	MS SQL Server
+-	SQL Server Management Studio
+-	Power BI 
+-	MS Excel 2021
+  
+________________________________________
 ## 🗄️ Database Structure
+________________________________________
 The dataset includes fields such as:
-- `loan_amnt`
-- `funded_amnt`
-- `int_rate`
-- `installment`
-- `grade`, `sub_grade`
-- `home_ownership`
-- `purpose`
+- `id`
+- `address_state`
+- `application_type`
 - `emp_length`
-- `addr_state`
-- `issue_d`
+- `emp_title`
+- `grade`
+- `home_ownership`
+- `issue_date`
+- `last_credit_pull_date`
+- `last_payment_date`
+- `loan_status`
+- `next_payment_date`
+- `member_id`
+- `purpose`
+- `sub_grade`
+- `term`
+- `verification_status`
+- `annual_income`
+- `dti`
+- `installment`
+- `int_rate`
+- `loan_amount`
+- `total_acc`
+- `total_payment`
 
----
-
+________________________________________
 ## ⚙️ Key Features
-- Dynamic filtering by home ownership, purpose, state, etc.
-- MoM and MTD indicators
-- Interactive charts and maps
-- Detailed record table with drill-through
+________________________________________
+-	Dynamic filtering by State, Grade, Purpose
+-	MoM and MTD tracking of all key metrics
+-	Good vs Bad Loan segmentation
+-	Region-wise and purpose-wise loan disbursal analysis
+-	Employment and Home Ownership breakdowns
 
----
-
+________________________________________
 ## 🚀 How to Run the Project
-1. Open Power BI Desktop.
-2. Load the provided `.pbix` file or recreate visuals using the PowerPoint slides.
-3. Connect to the sample loan data (CSV/Excel).
-4. Ensure relationships are established based on key fields like `loan_id` or `member_id`.
-5. Publish to Power BI Service (optional).
-
----
-
-## 📄 Access Full Documentation
+________________________________________
+1.	Import SQL data into MS SQL Server.
+2.	Open Power BI and connect to the database.
+3.	Use Power Query to clean and transform the data.
+4.	Build relationships and data model.
+5.	Load visuals and configure filters and KPIs.
+   
+________________________________________
+📄 Access Full Documentation
 👉 [Attach SQL Script or Google Drive/Repo link here]
+________________________________________
+📜 License
+________________________________________
+This project is released under the MIT License.
+________________________________________
+🙌 Acknowledgments
+________________________________________
+Special thanks to:
+•	Open Source SQL and Power BI Communities
+•	Microsoft Power Platform
+•	Data analysts and financial experts who inspired the metrics
 
----
 
-## 📜 License
-This project is licensed under the MIT License.
 
----
 
-## 🙌 Acknowledgments
-Thanks to open-source datasets and resources that inspired the visual layout and structure. Special appreciation to financial data enthusiasts and dashboard design communities.
+
+________________________________________
+📄 Access Full Documentation
+👉 [Attach SQL Script or Google Drive/Repo link here]
+________________________________________
+📜 License
+________________________________________
+This project is released under the MIT License.
+________________________________________
+🙌 Acknowledgments
+________________________________________
+Special thanks to:
+•	Open Source SQL and Power BI Communities
+•	Microsoft Power Platform
+•	Data analysts and financial experts who inspired the metrics
+
