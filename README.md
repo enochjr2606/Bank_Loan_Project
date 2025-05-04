@@ -34,11 +34,11 @@ Detailed insights are derived by examining each record with filters and slicers.
 
 ________________________________________
 ## 💡 Key Insights
--	86.2% of issued loans are classified as Good, while 13.8% are Bad.
--	Loans for Debt Consolidation represent the highest funded purpose (~$0.23B).
--	Most loans are for 60 months (62.66%).
--	Highest funded employment length: 10+ years ($116M).
--	Homeowners with Mortgages received more funding (~$219M) compared to renters.
+-	**`86.2%`** of issued loans are classified as Good, while **`13.8%`** are Bad.
+-	Loans for Debt Consolidation represent the highest funded purpose **`~$0.23B`**.
+-	Most loans are for 60 months **`62.66%`**.
+-	Highest funded employment length: 10+ years **`$116M`**.
+-	Homeowners with Mortgages received more funding **`~$219M`** compared to renters.
 
 ________________________________________
 ## 🛠️ Tools and Technologies
