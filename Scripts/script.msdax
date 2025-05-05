@@ -1,0 +1,273 @@
+/* This script creates a date table and calculates key monthly KPIs, such as loan applications,
+funded amounts, payments, interest rates, and DTI.
+It also computes MTD, PMTD, and MoM values for trend analysis, and segments results by Good and
+Bad loans for risk assessment.
+*/
+
+
+-- Create a Date Table using the minimum and maximum issue dates from the dataset
+Date Table = CALENDAR(
+    MIN(
+        bank_loan_data[issue_date]
+    ),
+    MAX(
+        bank_loan_data[issue_date]
+    )
+)
+
+-- Extract the abbreviated month name from the Date Table
+Month = 
+    FORMAT(
+        'Date Table'[Date], "mmm"
+    )
+
+-- Extract the numeric month from the Date Table
+Month Number = 
+    MONTH(
+        'Date Table'[Date]
+    )
+
+
+ 
+-- KPI’s:
+-- 1.	Total Loan Applications
+
+-- Calculate total number of loan applications
+Total Loan Applications = 
+    COUNT(
+        bank_loan_data[id]
+    )
+
+-- Calculate month-to-date loan applications
+MTD Loan Applications = 
+    CALCULATE(
+        TOTALMTD(
+            [Total Loan Applications],
+            'Date Table'[Date]
+        )
+    )
+
+-- Calculate previous month-to-date loan applications
+PMTD Loan Applications = 
+    CALCULATE(
+        [Total Loan Applications],
+        DATESMTD(
+            DATEADD(
+                'Date Table'[Date], -1, MONTH
+            )
+        )
+    )
+
+-- Calculate month-over-month growth in loan applications
+MoM Loan Applications = ([MTD Loan Applications] - [PMTD Loan Applications]) / [PMTD Loan Applications]
+
+
+
+-- 2.	Total Funded Amount
+
+-- Calculate total funded loan amount
+Total Funded Amount = 
+    SUM(
+        bank_loan_data[loan_amount]
+    )
+
+-- Calculate month-to-date funded loan amount
+MTD Total Funded Amount = 
+    CALCULATE(
+        TOTALMTD(
+            [Total Funded Amount],
+            'Date Table'[Date]
+        )
+    )
+
+-- Calculate previous month-to-date funded loan amount
+PMTD Funded Amount = 
+    CALCULATE(
+        [Total Funded Amount],
+        DATESMTD(
+            DATEADD(
+                'Date Table'[Date], -1, MONTH
+            )
+        )
+    )
+
+-- Calculate month-over-month growth in funded loan amount
+MoM Funded Amount = ([MTD Funded Amount] - [PMTD Funded Amount]) / [PMTD Funded Amount]
+
+
+
+-- 3.	Total Amount Received
+
+-- Calculate total amount received from payments
+Total Amount Received = 
+    SUM(
+        bank_loan_data[total_payment]
+    )
+
+-- Calculate month-to-date amount received
+MTD Total Amount Received = 
+    CALCULATE(
+        TOTALMTD(
+            [Total Amount Received],
+            'Date Table'[Date]
+        )
+    )
+
+-- Calculate previous month-to-date amount received
+PMTD Total Amount Received = 
+    CALCULATE(
+        [Total Amount Received],
+        DATESMTD(
+            DATEADD(
+                'Date Table'[Date], -1, MONTH
+            )
+        )
+    )
+
+-- Calculate month-over-month growth in amount received
+MoM Total Amount Received = ([MTD Total Amount Received] - [PMTD Total Amount Received]) / [PMTD Total Amount Received]
+
+
+
+-- 4.	Average Interest Rate
+
+-- Calculate average interest rate
+Average Interest Rate = 
+    AVERAGE(
+        bank_loan_data[int_rate]
+    )
+
+-- Calculate month-to-date average interest rate
+MTD Average Interest Rate = 
+    CALCULATE(
+        TOTALMTD(
+            [Average Interest Rate],
+            'Date Table'[Date]
+        )
+    )
+
+-- Calculate previous month-to-date average interest rate
+PMTD Average Interest = 
+    CALCULATE(
+        [Average Interest Rate],
+        DATESMTD(
+            DATEADD(
+                'Date Table'[Date], -1, MONTH
+            )
+        )
+    )
+
+-- Calculate month-over-month change in average interest rate
+MoM Average Interest Rate = ([MTD Average Interest Rate] - [PMTD Average Interest Rate]) / [PMTD Average Interest Rate]
+
+
+-- 5.	Average Debt to Income Ratio (DTI)
+
+-- Calculate average Debt-to-Income ratio (DTI)
+Average DTI = 
+    AVERAGE(
+        bank_loan_data[dti]
+    )
+
+-- Calculate month-to-date average DTI
+MTD Average DTI = 
+    CALCULATE(
+        TOTALMTD(
+            [Average DTI],
+            'Date Table'[Date]
+        )
+    )
+
+-- Calculate previous month-to-date average DTI
+PMTD Average DTI = 
+    CALCULATE(
+        [Average DTI],
+        DATESMTD(
+            DATEADD(
+                'Date Table'[Date], -1, MONTH
+            )
+        )
+    )
+
+-- Calculate month-over-month change in average DTI
+MoM Average DTI = ([MTD Average DTI] - [PMTD Average DTI]) / [PMTD Average DTI]
+
+
+ 
+-- GOOD LOAN ISSUED
+
+-- Calculate percentage of loan applications marked as 'Good Loan'
+Good Loan % = 
+    (
+        CALCULATE(
+            [Total Loan Applications],
+            bank_loan_data[Good Loan Vs Bad Loan] = "Good Loan"
+        )
+    )/[Total Loan Applications]
+
+-- Calculate number of good loan applications
+Good Loan Applications =
+    (
+        CALCULATE(
+            [Total Loan Applications],
+            bank_loan_data[Good Loan Vs Bad Loan] = "Good Loan"
+        )
+    )
+
+-- Calculate total funded amount for good loans
+Good Loan Funded Amount =
+    (
+        CALCULATE(
+            [Total Funded Amount],
+            bank_loan_data[Good Loan Vs Bad Loan] = "Good Loan"
+        )
+    )
+
+-- Calculate total amount received for good loans
+Good Loan Amount Received =
+    (
+        CALCULATE(
+            [Total Amount Received],
+            bank_loan_data[Good Loan Vs Bad Loan] = "Good Loan"
+        )
+    )
+
+
+ 
+-- BAD LOAN ISSUED
+
+-- Calculate percentage of loan applications marked as 'Bad Loan'
+Bad Loan % = 
+    (
+        CALCULATE(
+            [Total Loan Applications],
+            bank_loan_data[Good Loan Vs Bad Loan] = "Bad Loan"
+        )
+    )/[Total Loan Applications]
+
+-- Calculate number of bad loan applications
+Bad Loan Applications = 
+    (
+        CALCULATE(
+            [Total Loan Applications],
+            bank_loan_data[Good Loan Vs Bad Loan] = "Bad Loan"
+        )
+    )
+
+-- Calculate total funded amount for bad loans
+Bad Loan Funded Amount = 
+    (
+        CALCULATE(
+            [Total Funded Amount],
+            bank_loan_data[Good Loan Vs Bad Loan] = "Bad Loan"
+        )
+    )
+
+-- Calculate total amount received for bad loans
+Bad Loan Amount Received = 
+    (
+        CALCULATE(
+            [Total Amount Received],
+            bank_loan_data[Good Loan Vs Bad Loan] = "Bad Loan"
+        )
+    )
