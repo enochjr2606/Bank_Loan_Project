@@ -1,7 +1,10 @@
-/* This script creates a date table and calculates key monthly KPIs, such as loan applications,
+/* 
+-------------------------------------------------------------------------------
+This script creates a date table and calculates key monthly KPIs, such as loan applications,
 funded amounts, payments, interest rates, and DTI.
 It also computes MTD, PMTD, and MoM values for trend analysis, and segments results by Good and
 Bad loans for risk assessment.
+-------------------------------------------------------------------------------
 */
 
 
